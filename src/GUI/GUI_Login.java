@@ -174,7 +174,7 @@ public class GUI_Login extends javax.swing.JFrame {
             }
             
             else {
-                
+                 
                 JOptionPane.showMessageDialog(null, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }

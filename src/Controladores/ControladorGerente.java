@@ -9,6 +9,10 @@ package Controladores;
  *
  * @author Luis
  */
+import DAO.*;
+import Logica.*;
+
 public class ControladorGerente {
     
+     
 }

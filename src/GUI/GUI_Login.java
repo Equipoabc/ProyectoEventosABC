@@ -82,10 +82,11 @@ public class GUI_Login extends javax.swing.JFrame {
 
     private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
         // TODO add your handling code here:
-        
+           
         String user, cont;
         user = usuario.getText();
         cont = pass.getText();
+      
         
         Administrador admin;
         admin = controladorAdministrador.loginAdministrador();
@@ -97,7 +98,9 @@ public class GUI_Login extends javax.swing.JFrame {
         System.out.println(admin.getContrasena());
         
         if(admin.getUsuario().equals(user) && admin.getContrasena().equals(cont)){
-            
+              GUI_Administrador interfazAdmin = new GUI_Administrador();
+              interfazAdmin.setVisible(true);
+              
             System.out.println("Login correcto");
         }
     }//GEN-LAST:event_botonIniciarSesionActionPerformed

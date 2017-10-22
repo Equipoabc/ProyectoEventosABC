@@ -45,16 +45,16 @@ public class GUI_Login extends javax.swing.JFrame {
                 usuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 130, 20));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 133, -1));
+        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 130, 20));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 133, -1));
 
         TxtPass.setBackground(new java.awt.Color(255, 255, 255));
         TxtPass.setText("Contraseña:");
-        jPanel1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 133, -1));
+        jPanel1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 133, -1));
 
         TxtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtUsuario.setText("Usuario:");
-        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 133, -1));
+        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, 133, -1));
 
         botonIniciarSesion.setText("Ingresar");
         botonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -62,10 +62,10 @@ public class GUI_Login extends javax.swing.JFrame {
                 botonIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
+        jPanel1.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
         botonOlvide.setText("Olvidé mi contraseña");
-        jPanel1.add(botonOlvide, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 130, -1));
+        jPanel1.add(botonOlvide, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

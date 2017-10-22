@@ -15,5 +15,17 @@ import Logica.*;
 
 public class ControladorGerente {
     
-     
+    DaoGerente daoGerente;
+    
+    public ControladorGerente(){
+        
+        daoGerente = new DaoGerente();
+    }
+    
+    public Gerente loginGerente(String user){
+
+        Gerente gerente;
+        gerente = daoGerente.loginGerente(user);
+        return gerente;
+    }
 }

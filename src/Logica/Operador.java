@@ -26,7 +26,23 @@ public class Operador {
   	private String contrasena;
   	private String pregunta;
   	private String respuesta;
-
+       
+        public Operador(){
+            
+            cedula_op = "";
+            primer_nombre = "";
+            segundo_nombre = "";
+            primer_apellido = "";
+            segundo_apellido = "";
+            fecha_nacimiento = null;
+            email = "";
+            telefono = "";
+            celular = "";
+            estado = "";
+            contrasena = "";
+            pregunta = "";
+            respuesta = "";
+        }
     /**
      * @return the cedula_op
      */

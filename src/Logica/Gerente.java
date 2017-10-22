@@ -27,9 +27,27 @@ public class Gerente {
 	private String pregunta;
 	private String respuesta;
 
+        
+        public Gerente(){
+            
+            cedula_ge = "";
+            primer_nombre = "";
+            segundo_nombre = "";
+            primer_apellido = "";
+            segundo_apellido = "";
+            fecha_nacimiento = null;
+            email = "";
+            telefono = "";
+            celular = "";
+            estado = "";
+            contrasena = "";
+            pregunta = "";
+            respuesta = "";
+        }
     /**
      * @return the cedula_ge
      */
+        
     public String getCedula_ge() {
         return cedula_ge;
     }

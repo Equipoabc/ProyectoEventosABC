@@ -23,12 +23,12 @@ public class DaoAdministrador {
         conexion = new Conexiones();
     }
     
-    public Administrador loginAdministrador(){
+    public Administrador loginAdministrador(String user){
         
         String sql;
         Administrador administrador = new Administrador();
 
-        sql = "SELECT usuario, contrasena FROM Administradores";
+        sql = "SELECT usuario, contrasena FROM Administradores WHERE usuario = '" + user + "';";
         
         try{
             Connection con = conexion.getConnetion();

@@ -22,10 +22,10 @@ public class ControladorAdministrador {
         daoAdministrador = new DaoAdministrador();
     }
     
-    public Administrador loginAdministrador(){
+    public Administrador loginAdministrador(String user){
 
         Administrador administrador;
-        administrador = daoAdministrador.loginAdministrador();
+        administrador = daoAdministrador.loginAdministrador(user);
         return administrador;
     }
 }

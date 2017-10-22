@@ -23,12 +23,12 @@ public class DaoGerente {
         conexion = new Conexiones();
     }
     
-    public Gerente loginGerenete(){
+    public Gerente loginGerente(String user){
         
         String sql;
         Gerente gerente = new Gerente();
 
-        sql = "SELECT cedula_ge, contrasena FROM Gerente";
+        sql = "SELECT cedula_ge, contrasena FROM Gerentes WHERE cedula_ge = '" + user + "';";
         
         try{
             Connection con = conexion.getConnetion();

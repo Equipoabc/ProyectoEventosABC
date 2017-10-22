@@ -13,6 +13,12 @@ public class Administrador {
     
     private String usuario;
     private String contrasena;
+    
+    public Administrador(){
+        
+        usuario = "";
+        contrasena = "";
+    }    
 
     /**
      * @return the usuario

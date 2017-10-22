@@ -11,16 +11,21 @@ package GUI;
 
 import Controladores.*;
 import Logica.*;
+import javax.swing.JOptionPane;
 
 public class GUI_Login extends javax.swing.JFrame {
     /**
      * Creates new form GUI_Login
      */
     ControladorAdministrador controladorAdministrador;
+    ControladorGerente controladorGerente;
+    ControladorOperador controladorOperador;
     
     public GUI_Login() {
         initComponents();
         controladorAdministrador = new ControladorAdministrador();
+        controladorGerente = new ControladorGerente();
+        controladorOperador = new ControladorOperador();
     }
 
     /**
@@ -37,23 +42,26 @@ public class GUI_Login extends javax.swing.JFrame {
         pass = new javax.swing.JPasswordField();
         TxtPass = new javax.swing.JLabel();
         TxtUsuario = new javax.swing.JLabel();
-        botonIniciarSesion = new javax.swing.JButton();
         botonOlvide = new javax.swing.JLabel();
+        botonIniciarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 130, 20));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 133, -1));
+
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
 
         TxtPass.setBackground(new java.awt.Color(255, 255, 255));
         TxtPass.setText("Contraseña:");
-        jPanel1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 133, -1));
 
         TxtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtUsuario.setText("Usuario:");
-        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, 133, -1));
+
+        botonOlvide.setText("Olvidé mi contraseña");
 
         botonIniciarSesion.setText("Ingresar");
         botonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -61,46 +69,125 @@ public class GUI_Login extends javax.swing.JFrame {
                 botonIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
-        botonOlvide.setText("Olvidé mi contraseña");
-        jPanel1.add(botonOlvide, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 130, -1));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(466, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(botonOlvide))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonIniciarSesion)))
+                .addGap(62, 62, 62))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(190, Short.MAX_VALUE)
+                .addComponent(TxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(TxtPass)
+                .addGap(6, 6, 6)
+                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(botonIniciarSesion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonOlvide)
+                .addGap(52, 52, 52))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
-        // TODO add your handling code here:
         
         String user, cont;
         user = usuario.getText();
         cont = pass.getText();
         
         Administrador admin;
-        admin = controladorAdministrador.loginAdministrador();
+        admin = controladorAdministrador.loginAdministrador(user);
+
+        Gerente gen;
+        gen = controladorGerente.loginGerente(user);
         
-        /*System.out.println(user);
-        System.out.println(cont);
-        
-        System.out.println(admin.getUsuario());
-        System.out.println(admin.getContrasena());*/
-        
-        if(admin.getUsuario().equals(user) && admin.getContrasena().equals(cont)){
+        Operador ope;
+        ope = controladorOperador.loginOperador(user);
+
+        if(admin.getUsuario().equals(user)){
             
-            System.out.println("Login correcto");
+            if(admin.getContrasena().equals(cont)){
+                
+                System.out.println("Login administrador correcto.");
+                GUI_Administrador interfazAdmin = new GUI_Administrador();
+                interfazAdmin.setVisible(true);
+            }
+            
+            else {
+                
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        else if(gen.getCedula_ge().equals(user)){
+                        
+            if(gen.getContrasena().equals(cont)){
+                
+                System.out.println("Login gerente correcto.");
+                // Abrir intefaz del gernete.
+            }
+            
+            else {
+                
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        else if(ope.getCedula_op().equals(user)){
+            
+            if(ope.getContrasena().equals(cont)){
+                
+                System.out.println("Login operador correcto.");
+                // Abrir intefaz del operador.
+            }
+            
+            else {
+                
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        else {
+
+            JOptionPane.showMessageDialog(null, "El usuario no existe.\nVerifique sus datos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botonIniciarSesionActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
 
     /**
      * @param args the command line arguments

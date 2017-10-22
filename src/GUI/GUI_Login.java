@@ -39,22 +39,16 @@ public class GUI_Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usuarioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 130, 20));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 133, -1));
+        jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 200, 30));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 200, 30));
 
         TxtPass.setBackground(new java.awt.Color(255, 255, 255));
         TxtPass.setText("Contraseña:");
-        jPanel1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 133, -1));
+        jPanel1.add(TxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 150, 20));
 
         TxtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         TxtUsuario.setText("Usuario:");
-        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 133, -1));
+        jPanel1.add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 150, 30));
 
         botonIniciarSesion.setText("Ingresar");
         botonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -62,31 +56,45 @@ public class GUI_Login extends javax.swing.JFrame {
                 botonIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
+        jPanel1.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, -1, -1));
 
         botonOlvide.setText("Olvidé mi contraseña");
-        jPanel1.add(botonOlvide, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 130, -1));
+        jPanel1.add(botonOlvide, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioActionPerformed
-
     private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
         // TODO add your handling code here:
+         String user, contrasena;
+        user = usuario.getText();
+        contrasena = pass.getText();
+        
+        //Administrador admin;
+       // Operador oper;
+       // Gerente ger;
+       
+       
+        
+        
+        
     }//GEN-LAST:event_botonIniciarSesionActionPerformed
 
     /**

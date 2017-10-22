@@ -90,11 +90,11 @@ public class GUI_Login extends javax.swing.JFrame {
         Administrador admin;
         admin = controladorAdministrador.loginAdministrador();
         
-        /*System.out.println(user);
+        System.out.println(user);
         System.out.println(cont);
         
         System.out.println(admin.getUsuario());
-        System.out.println(admin.getContrasena());*/
+        System.out.println(admin.getContrasena());
         
         if(admin.getUsuario().equals(user) && admin.getContrasena().equals(cont)){
             

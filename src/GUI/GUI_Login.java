@@ -5,17 +5,26 @@
  */
 package GUI;
 
+
+
 /**
  *
  * @author Jhoan Sebastián
  */
+
+import Controladores.*;
+import Logica.*;
+
 public class GUI_Login extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI_Login
      */
+    ControladorAdministrador controladorAdministrador;
+    
     public GUI_Login() {
         initComponents();
+        controladorAdministrador = new ControladorAdministrador();
     }
 
     /**
@@ -87,6 +96,25 @@ public class GUI_Login extends javax.swing.JFrame {
 
     private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
         // TODO add your handling code here:
+        
+        String user, cont;
+        user = usuario.getText();
+        cont = pass.getText();
+        
+        Administrador admin;
+        admin = controladorAdministrador.loginAdministrador();
+        
+        System.out.println(user);
+        System.out.println(cont);
+        
+        System.out.println(admin.getUsuario());
+        System.out.println(admin.getContrasena());
+        System.out.println("Login correcto");
+        
+        if(admin.getUsuario().equals(user) && admin.getContrasena().equals(cont)){
+            
+            System.out.println("Login correcto");
+        }
     }//GEN-LAST:event_botonIniciarSesionActionPerformed
 
     /**

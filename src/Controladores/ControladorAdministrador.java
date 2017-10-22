@@ -9,6 +9,23 @@ package Controladores;
  *
  * @author Luis
  */
+
+import DAO.*;
+import Logica.*;
+
 public class ControladorAdministrador {
     
+    DaoAdministrador daoAdministrador;
+    
+    public ControladorAdministrador(){
+        
+        daoAdministrador = new DaoAdministrador();
+    }
+    
+    public Administrador loginAdministrador(){
+
+        Administrador administrador;
+        administrador = daoAdministrador.loginAdministrador();
+        return administrador;
+    }
 }

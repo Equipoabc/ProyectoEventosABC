@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package GUI;
-
-
-
 /**
  *
  * @author Jhoan Sebastián
@@ -16,7 +13,6 @@ import Controladores.*;
 import Logica.*;
 
 public class GUI_Login extends javax.swing.JFrame {
-
     /**
      * Creates new form GUI_Login
      */
@@ -48,12 +44,6 @@ public class GUI_Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usuarioActionPerformed(evt);
-            }
-        });
         jPanel1.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 130, 20));
         jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 133, -1));
 
@@ -90,10 +80,6 @@ public class GUI_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioActionPerformed
-
     private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
         // TODO add your handling code here:
         
@@ -109,7 +95,6 @@ public class GUI_Login extends javax.swing.JFrame {
         
         System.out.println(admin.getUsuario());
         System.out.println(admin.getContrasena());
-        System.out.println("Login correcto");
         
         if(admin.getUsuario().equals(user) && admin.getContrasena().equals(cont)){
             

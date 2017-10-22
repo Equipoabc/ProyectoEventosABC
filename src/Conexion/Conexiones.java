@@ -23,7 +23,7 @@ public class Conexiones {
     
         url = "jdbc:postgresql://localhost:5432/ProyectoEventosABC";
         usuario = "postgres";
-        password = "123";
+        password = "1234";
     }
     
     public Connection conectar(){
@@ -40,7 +40,7 @@ public class Conexiones {
         try{
             // Crear el objeto de conexion a la base de datos.
             conexion = DriverManager.getConnection(url, usuario, password);
-            System.out.println("Conexion Abierta.");
+            System.out.println("Conexion Abierta");
             return conexion;
             // Crear objeto Statement para realizar queries a la base de datos.
         } catch(SQLException e){

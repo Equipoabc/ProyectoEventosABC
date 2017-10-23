@@ -58,4 +58,45 @@ public class DaoOperador {
         
         conexion.closeConection(conexion.getConnetion());
     }
+
+    public int guardarOperador(Operador op) {
+        String sql_guardar;
+        int numFilas=0;
+        
+        /*INSERT INTO Operadores (cedula_op, primer_nombre, segundo_nombre, 
+        primer_apellido, segundo_apellido, 
+	fecha_nacimiento, email, telefono, celular, estado, contrasena, pregunta, respuesta)
+VALUES ('1010059777', 'Ivan', 'Mauricio', 'Toro', 'Cifuentes', '1998-03-16',
+        'ivan.toro@hotmail.com', '568402', '3164875865',
+ 'Activo', '54321', '¿Scorpion?', 'Hanzo Hasashi');*/
+        
+        sql_guardar = "INSERT INTO Operadores (cedula_op, primer_nombre, segundo_nombre, " + 
+        "primer_apellido, segundo_apellido, " /*fecha_nacimiento*/ + "email, telefono, celular, estado, " + 
+        "contrasena, pregunta, respuesta) VALUES ('" + op.getCedula_op() + "', '" +
+        op.getPrimer_nombre() +  "', '" + op.getSegundo_nombre() +  "', '" +
+        op.getPrimer_apellido() +  "', '" + op.getSegundo_apellido() + "', '" + 
+        /*op.getFecha_nacimiento() + "', '" + */op.getEmail() +  "', '" + 
+        op.getTelefono() +  "', '" + op.getCelular() +  "', '" +        
+        "Activo" +  "', '" + op.getContrasena() +  "', '" +
+        op.getPregunta() +  "', '" + op.getRespuesta() +  "')" ;
+        
+        try{
+            Connection conn= conexion.getConnetion();
+            Statement sentencia = conn.createStatement();
+
+            numFilas = sentencia.executeUpdate(sql_guardar);            
+            System.out.println("up " + numFilas);
+            return numFilas;
+            
+        }
+        catch(SQLException e){
+            System.out.println(e); 
+            }
+        catch(Exception e){ 
+            System.out.println(e);
+        }
+        return -1;
+        
+        
+    }
 }

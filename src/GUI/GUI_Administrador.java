@@ -80,6 +80,8 @@ public class GUI_Administrador extends javax.swing.JFrame {
 
     private void crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioActionPerformed
         // TODO add your handling code here:
+        GUI_CrearUsuario interfazCrearUsuario = new GUI_CrearUsuario();
+                interfazCrearUsuario.setVisible(true);
     }//GEN-LAST:event_crearUsuarioActionPerformed
 
     private void modificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarUsuarioActionPerformed

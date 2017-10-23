@@ -38,7 +38,7 @@ public class Operador {
             email = "";
             telefono = "";
             celular = "";
-            estado = "";
+            estado = "Activo";
             contrasena = "";
             pregunta = "";
             respuesta = "";
@@ -224,4 +224,5 @@ public class Operador {
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
     }
+
 }

@@ -156,7 +156,8 @@ public class GUI_Login extends javax.swing.JFrame {
             if(gen.getContrasena().equals(cont)){
                 
                 System.out.println("Login gerente correcto.");
-                // Abrir intefaz del gernete.
+                GUI_Gerente interfazGerente = new GUI_Gerente();
+                interfazGerente.setVisible(true);
             }
             
             else {
@@ -170,17 +171,16 @@ public class GUI_Login extends javax.swing.JFrame {
             if(ope.getContrasena().equals(cont)){
                 
                 System.out.println("Login operador correcto.");
-                // Abrir intefaz del operador.
+                GUI_Operador interfazOperador = new GUI_Operador();
+                interfazOperador.setVisible(true);
             }
             
             else {
-                 
+                
                 JOptionPane.showMessageDialog(null, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
         else {
-
             JOptionPane.showMessageDialog(null, "El usuario no existe.\nVerifique sus datos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botonIniciarSesionActionPerformed

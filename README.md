@@ -36,5 +36,5 @@ git pull https://github.com/Equipoabc/ProyectoEventos.git
 Cuando queremos revertir un cambio 
 git revert <codigo del commit>
     
-    Más informacion acercad e git en < https://git-scm.com/book/es/v1/Fundamentos-de-Git-Trabajando-con-repositorios-remotos >
+Más informacion acercad e git en < https://git-scm.com/book/es/v1/Fundamentos-de-Git-Trabajando-con-repositorios-remotos >
 
